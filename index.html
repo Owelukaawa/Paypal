@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="paypal.css">
+  <title>PLP DIGITAL WORLD</title>
+</head>
+ <body>
+
+ <h1 class="title">PLP DIGITAL WORLD</h1>
+
+ <div class="image-container">
+    <img src="plp.png" alt="plp image" >
+ </div>
+
+  <p>
+    Welcome to PLP Digital World! 
+    Here you can subscribe to our services.
+  </p>
+
+  <p>
+     PLP Digital World we offer a variety of 
+     digital services to enhance your online experience.
+  </p>
+
+  <h2>Subscribe to our Monthly Plan</h2>
+
+ <p>
+   Click the button below to subscribe 
+   to our monthly plan for just $10.00 per month.
+ </p>
+
+
+  <div id="paypal-button-container-P-85N24299AH426531ENCMDBXA"></div>
+<script src="https://www.paypal.com/sdk/js?client-id=AUSxZ_pGJJUwuvfxTYWd5QyMXwowcA89QP5JdzNOylIQAeQMZSolTs1urp37CQWJbjBkTfllcPXJo-SS&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+<script>
+  paypal.Buttons({
+      style: {
+          shape: 'pill',
+          color: 'gold',
+          layout: 'horizontal',
+          label: 'subscribe'
+      },
+      createSubscription: function(data, actions) {
+        return actions.subscription.create({
+          /* Creates the subscription */
+          plan_id: 'P-85N24299AH426531ENCMDBXA'
+        });
+      },
+      onApprove: function(data, actions) {
+        alert(data.subscriptionID); // You can add optional success message for the subscriber here
+      }
+  }).render('#paypal-button-container-P-85N24299AH426531ENCMDBXA'); // Renders the PayPal button
+</script>
+  
+</body>
+</html>
